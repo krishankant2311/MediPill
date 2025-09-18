@@ -163,7 +163,7 @@ export const deletePrescription = async (req, res) => {
     const { id } = req.params;
 
     // Patient validate
-    const patient = await Patient.findOne({ _id: token.id, status: "Active" });
+    const patient = await Patient.findOne({ _id: token._id, status: "Active" });
     if (!patient) {
       return res.send({
         statusCode: 404,
